@@ -1,0 +1,162 @@
+:root{
+  --bg: #fff7ff;
+  --card: #ffffff;
+  --ink: #333;
+  --accent: #ff87d1;
+  --accent-2: #a78bfa;
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 50% -10%, #f0f8ff 0%, var(--bg) 60%);
+  color: var(--ink);
+  font-family: "Zen Maru Gothic", system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+}
+
+.site-header, .site-footer {
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.brand-text {
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.logo { font-size: 20px; }
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  font-family: "Potta One", cursive;
+  font-size: 40px;
+  line-height: 1.1;
+  margin: 8px 0 4px;
+  text-align: center;
+  letter-spacing: .02em;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  text-align: center;
+  margin: 0 0 20px;
+  opacity: .9;
+}
+
+.kuji-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-rank {
+  font-family: "Potta One", cursive;
+  font-size: 44px;
+  margin-bottom: 6px;
+}
+
+.result-message {
+  font-size: 18px;
+  margin: 8px auto 14px;
+  max-width: 46ch;
+  line-height: 1.7;
+}
+
+.result-meta {
+  display: grid;
+  gap: 6px;
+  font-size: 16px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 18px 0 6px;
+}
+
+.btn {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  cursor: pointer;
+  transition: transform .05s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+  box-shadow: 0 6px 18px rgba(167,139,250,.35);
+}
+
+.btn.ghost {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+}
+
+.btn:active { transform: translateY(1px) scale(.99); }
+
+.tip {
+  text-align: center;
+  font-size: 13px;
+  opacity: .75;
+}
+
+/* ちょびっと紙吹雪アニメ */
+.confetti {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.confetti.show { opacity: 1; }
+
+.confetti::before {
+  content: "✨🎉🎊✨";
+  font-size: 28px;
+  animation: pop .9s ease forwards;
+}
+
+@keyframes pop {
+  0% { transform: translateY(-6px) scale(.9); filter: blur(1px); }
+  40% { transform: translateY(0) scale(1.06); filter: blur(0); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+.site-footer {
+  color: #666;
+}

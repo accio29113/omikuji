@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>おみくじ | プログラミング教室アクシオ</title>
+  <meta name="description" content="アクシオのおみくじ。今日の運勢とラッキー情報をチェック！" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo">🎲</span>
+      <span class="brand-text">プログラミング教室アクシオ</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="title">アクシオおみくじ</h1>
+    <p class="subtitle">今日の運勢、引いてみる？かわいい文字で出るけんね🐾</p>
+
+    <div class="kuji-card" aria-live="polite">
+      <div class="result-rank" id="rank">—</div>
+      <div class="result-message" id="message">ボタンを押してね</div>
+      <div class="result-meta">
+        <div><strong>ラッキーカラー：</strong><span id="color">—</span></div>
+        <div><strong>ラッキーアイテム：</strong><span id="item">—</span></div>
+        <div><strong>ラッキーアクション：</strong><span id="action">—</span></div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button id="drawBtn" class="btn primary" aria-label="おみくじを引く">おみくじ引く！</button>
+      <button id="resetBtn" class="btn ghost" aria-label="結果をリセット">リセット</button>
+    </div>
+
+    <p class="tip">Enterキーでも引けるよ。結果は画面読み上げ対応👌</p>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> プログラミング教室アクシオ — みんなで楽しく学ぼう！</small>
+  </footer>
+
+  <div id="confetti" class="confetti" aria-hidden="true"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
