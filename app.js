@@ -4,7 +4,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const fortunes = [
   {
     rank: "🎯 大吉",
-    message: "心が躍るような出来事が起こりそう！何事も結果良好の波に乗ってういます。",
+    message: "心が躍るような出来事が起こりそう！何事も結果良好の波に乗っています。",
   },
   {
     rank: "🌟 中吉",
@@ -115,6 +115,7 @@ window.addEventListener("keydown", (e) => {
     draw();
   }
 });
+
 
 
 
